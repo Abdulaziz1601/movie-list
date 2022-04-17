@@ -5,7 +5,6 @@
     color: $white;
     letter-spacing: 0.5px;
     line-height: 16px;
-
     &__header {
         padding: 30px 0 30px 30px;
         border-bottom: 1px solid $light-white;
@@ -22,6 +21,9 @@
         padding: 40px;
         padding-top: 0;
         border-bottom: 1px solid $light-white;
+        overflow-x: hidden;
+        overflow-y: auto;
+        height: 600px;
     }
 
     &__item {

@@ -26,6 +26,11 @@
         background: url('../../resources/movies__poster.png');
         border-radius: 20px;
         position: relative;
+        transition: all .5s;
+        &_selected {
+            box-shadow: 0 5px 20px $light-white;
+            transform: translateY(-8px);
+        }
     }
 
     &__info {
