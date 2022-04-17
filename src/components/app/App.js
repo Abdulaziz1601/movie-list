@@ -21,7 +21,7 @@ function App() {
                 </div>
                 <aside className="app__aside">
                     <Comments movieId={movieId}/>
-                    <AddForm />
+                    <AddForm movieId={movieId}/>
                 </aside>
             </div>
         </>

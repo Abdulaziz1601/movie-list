@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import { Formik, Form, Field, ErrorMessage as FormikErrorMessage } from 'formik';
+import { Formik, Form, Field, ErrorMessage} from 'formik';
 import * as Yup from 'yup';
+import axios from 'axios';
 
 import './addForm.scss';
 
-const AddForm = () => {
+const AddForm = ({movieId}) => {
     const [name, setName] = useState(null);
     const [comment, setComment] = useState(null);
     const updateComment = (name, comment) => { 
@@ -17,15 +18,26 @@ const AddForm = () => {
         <div className="form">
             <Formik
                 initialValues={{
-                    name: '',
+                    username: '',
                     comment: ''
                 }}
                 validationSchema={Yup.object({
-                    name: Yup.string().required('This field is required'),
+                    username: Yup.string().required('This field is required'),
                     comment: Yup.string().required('This field is required').min(10, 'At least 10 characters'),
                 })}
-                onSubmit={({ name, comment }) => {
-                    updateComment(name, comment);
+                onSubmit={({ username, comment }, actions) => {
+                    updateComment(username, comment);
+                    axios.post(`https://624b0e2171e21eebbcec0e9d.mockapi.io/movies/${movieId}/comments`, {
+                        username,
+                        comment_msg: comment
+                    })
+                    .then(function (response) {
+                        console.log(response);
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    });        
+                    actions.resetForm();
                 }}
             >
                 <Form>
@@ -36,6 +48,7 @@ const AddForm = () => {
                             placeholder='Enter username'
                             className='form__username'
                             name="username"/>
+                        <ErrorMessage className="error" name="username" component="div"/>     
                         <Field 
                             className="form__comment"
                             id="comment"
@@ -43,6 +56,7 @@ const AddForm = () => {
                             placeholder="Comment..."
                             as="textarea"
                             />
+                        <ErrorMessage className="error" name="comment" component="div"/>     
                         <button 
                             type='submit' 
                             className="form__btn"
@@ -51,7 +65,6 @@ const AddForm = () => {
                                 Post
                         </button>
                     </div>
-                    {/* <FormikErrorMessage component="div" className='char__search-error' name="charName" /> */}
                 </Form>
             </Formik>
         </div>

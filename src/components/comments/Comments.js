@@ -2,13 +2,23 @@ import { useEffect, useState } from 'react';
 
 import MovieService from '../../services/MovieService';
 import './comments.scss'
-const  Comments = (props) =>  {
+const Comments = (props) =>  {
     const { getCommentsById } = MovieService();
 
     const [comments, setComments] = useState([]);
 
     useEffect(() => {
-        getCommentsById(props.movieId).then(res=>setComments(res));
+        const id = setInterval(() => {
+            getCommentsById(props.movieId).then(res=>setComments(res));
+        }, 3000);
+
+        return () => {
+            clearInterval(id);
+        }
+    }, []);
+    
+    useEffect(() => {
+            getCommentsById(props.movieId).then(res=>setComments(res));
     }, [props.movieId]);
 
     const renderItems = (arr) => {
