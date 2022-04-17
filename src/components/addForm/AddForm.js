@@ -7,8 +7,7 @@ import './addForm.scss';
 const AddForm = () => {
     const [name, setName] = useState(null);
     const [comment, setComment] = useState(null);
-
-    const updateComment = (name, comment) => {
+    const updateComment = (name, comment) => { 
         setName(name);
         setComment(comment);
         console.log(name, comment)
