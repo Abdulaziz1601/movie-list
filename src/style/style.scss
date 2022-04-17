@@ -1,0 +1,68 @@
+@import './variables';
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;600;700&display=swap');
+
+* {
+    font-family: "Roboto Condensed", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: $main-color;
+    color: $white;
+}
+
+ul,
+li,
+dl {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    &:hover {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; 
+}
+
+.app {
+    display: flex;
+    &__inner {
+        width: 70%;
+        padding: 55px 0 46px 0;
+        &-wrapper {
+            width: 890px;
+            margin: 0 auto;
+        }
+    }
+    &__aside {
+        width: 30%;
+        border-left: 1px solid $light-white;  
+        border-bottom: 1px solid $light-white;  
+    }
+}

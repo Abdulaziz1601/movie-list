@@ -1,0 +1,39 @@
+@import '../../style/variables';
+
+.header {
+    border-bottom: 1px solid $light-white;
+    &__wrapper {
+        padding: 45px 95px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__nav {
+        display: flex;
+        align-items: center;
+
+        &-item {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 14px;
+            letter-spacing: 0.5px;
+            color: $light-white;
+            box-sizing: border-box;
+
+            &:not(:first-child) {
+                margin-left: 40px;
+            }
+        }
+    }
+    &__icons {
+        display: flex;
+        align-items: center;
+
+        &-item {
+            &:not(:first-child) {
+                margin-left: 40px;
+            }
+        }
+    }
+
+}

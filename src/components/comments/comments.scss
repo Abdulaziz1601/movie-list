@@ -1,0 +1,44 @@
+@import '../../style/variables';
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;500;700&display=swap');
+
+.comments {
+    color: $white;
+    letter-spacing: 0.5px;
+    line-height: 16px;
+
+    &__header {
+        padding: 30px 0 30px 30px;
+        border-bottom: 1px solid $light-white;
+
+        &-title {
+            font-family: 'Prompt';
+            text-align: left;
+            font-weight: 700;
+            font-size: 23px;
+        }
+    }
+
+    &__wrapper {
+        padding: 40px;
+        padding-top: 0;
+        border-bottom: 1px solid $light-white;
+    }
+
+    &__item {
+        margin-top: 40px;
+    }
+
+    &__title {
+        font-family: 'Prompt';
+        font-weight: 500;
+        font-size: 18px;
+    }
+
+    &__descr {
+        margin-top: 10px;
+        text-align: left;
+        font-family: 'Prompt';
+        font-weight: 300;
+        font-size: 13px;
+    }
+}
