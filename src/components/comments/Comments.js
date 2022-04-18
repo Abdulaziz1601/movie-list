@@ -22,8 +22,8 @@ const Comments = (props) =>  {
     }, [props.movieId]);
 
     const renderItems = (arr) => {
-        return arr.map(c => (
-            <div className="comments__item" key={c.id}>
+        return arr.map((c, index) => (
+            <div className="comments__item" key={index}>
                 <div className="comments__title">{c.username}</div>
                 <div className="comments__descr">{c.comment}</div>
             </div>
