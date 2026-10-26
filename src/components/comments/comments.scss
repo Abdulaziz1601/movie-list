@@ -26,6 +26,14 @@
         height: 600px;
     }
 
+    &__empty {
+        margin-top: 40px;
+        font-family: 'Prompt';
+        font-weight: 300;
+        font-size: 14px;
+        opacity: 0.6;
+    }
+
     &__item {
         margin-top: 40px;
     }
